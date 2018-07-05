@@ -1,0 +1,52 @@
+﻿.spinner-shadow {
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.spinner-area {
+    font-size: .8em;
+    font-weight: bold;
+    /*color:white;
+    background:black;*/
+    opacity: 1.0;
+    /*border-radius:5px;*/
+    border: 1px solid rgb(2, 114, 171);
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    z-index: 2001;
+    box-shadow: -1px 12px 50px black;
+    width: 300px;
+}
+
+.spinner-no-float {
+    display: table-cell;
+    float: none;
+}
+
+.spinner-icon {
+    background-color: rgb(2, 114, 171);
+    color:white;
+    padding: 15px;
+    border-right:silver;
+}
+
+.spinner-message{
+    background-color:whitesmoke;
+    width:100%;
+    padding-left:10px;
+    vertical-align:middle;
+}
+
+.spinner-backdrop {
+    width: 100%;
+    height:100%;
+    background: grey;
+    position:fixed;
+    left:0px;
+    top:0px;
+    bottom:0px;
+    opacity:.5;
+    z-index: 2000;
+}

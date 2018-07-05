@@ -1,0 +1,75 @@
+#notifier {
+    border: 1px solid !important;
+    margin-left:0px;margin-right:0px !important;
+}
+
+.noty_body{
+	padding-top:15px;
+	padding-bottom:15px;
+	background-color:whitesmoke;
+}
+
+.icon-area {
+    color: white !important;
+    opacity: .8 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    font-size: 2em !important; 
+    border-right:1px solid gray !important;
+}
+
+.no-float{
+    display:table-cell !important;
+    float:none !important;
+}
+
+.btn-notifier{
+
+    font-size:12px !important;
+    font-weight:bold !important;
+    border-radius:2px !important;
+    margin-left:5px !important;
+    margin-bottom:-10px !important;
+    background-color:whitesmoke !important;
+    border:1px solid lightgrey !important;
+    min-width:60px !important;
+}
+
+.btn-notifier:hover{
+	background-color:lightgrey !important;
+}
+
+/*==================================================
+ * Shadow
+ * ===============================================*/
+.shadow {
+    position: relative !important;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
+}
+
+    .shadow:before, .shadow:after {
+        content: "" !important;
+        position: absolute !important;
+        z-index: -1 !important;
+        -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8) !important;
+        -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8) !important;
+        box-shadow: 0 0 20px rgba(0,0,0,0.8) !important;
+        top: 10px !important;
+        bottom: 10px !important;
+        left: 0 !important;
+        right: 0 !important;
+        -moz-border-radius: 100px / 10px !important;
+        border-radius: 100px / 10px !important;
+    }
+
+    .shadow:after {
+        right: 10px !important;
+        left: auto !important;
+        -webkit-transform: skew(8deg) rotate(3deg) !important;
+        -moz-transform: skew(8deg) rotate(3deg) !important;
+        -ms-transform: skew(8deg) rotate(3deg) !important;
+        -o-transform: skew(8deg) rotate(3deg) !important;
+        transform: skew(8deg) rotate(3deg) !important;
+    }

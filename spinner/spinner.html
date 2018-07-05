@@ -1,0 +1,16 @@
+﻿<template bindable="message, showSpinner">
+    <require from="spinner/spinner.css"></require>
+
+    <div show.bind="busyCount > 0">
+        <div class="spinner-backdrop">&nbsp</div>
+
+        <div class="spinner-area spinner-shadow">
+            <div class="spinner-icon spinner-no-float">
+                <i class="fa fa-spinner fa-spin fa-3x" show.one-way="showSpinner"></i>
+            </div>
+            <div class="spinner-message spinner-no-float">
+                <span sstyle="margin-left:5px;" innerHtml.one-way="message"></span>
+            </div>
+        </div>
+    </div>
+</template>
