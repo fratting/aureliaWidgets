@@ -28,7 +28,7 @@ Use this component to provide a blocking UI based spinner. For example, when you
 	
 **Dependencies:**  
 * This control depends on the pub/sub of the Aurelia EventAggregator to listen for commands to show and hide
-* This control uses font awesome to render the spinner graphic. This is already included with the Roster project.
+* This control uses font awesome to render the spinner graphic.
 
 
 
