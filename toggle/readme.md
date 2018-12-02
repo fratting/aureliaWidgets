@@ -3,7 +3,7 @@
 Use this component as an alternative to typical checkboxes.
 
 **Importing:**
-	<require from="toggle/toggle"></require>
+	<require from="rapiduiFramework/toggle/toggle"></require>
 
 **How To Use In Your View:**
 	<toggle element-id="unique value" is-enabled="true/false" state.one-way="enable/disable" initial-state.one-time="enable/disable" change.delegate="someFunction($event)"></toggle>

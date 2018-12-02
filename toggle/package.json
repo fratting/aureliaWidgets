@@ -1,0 +1,18 @@
+{
+  "name": "toggle",
+  "version": "1.0.0",
+  "description": "Toggle for aurelia",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://codecloud.web.att.com/scm/st_rui/rapiduiframework.git"
+  },
+  "keywords": [
+    "toggle",
+    "aurelia"
+  ],
+  "author": "Chris <cf671s.us.att.com>",
+  "license": "ISC"
+}

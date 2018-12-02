@@ -1,0 +1,9 @@
+<template bindable="elementId, valueProperty, textProperty, isSelectedProperty">
+	<require from="rapiduiFramework/multiselect/multiselect.css"></require>
+	
+	<select id="${elementId}" class="rapid-multiselect">
+		<option repeat.for="option of allOptions" id="option_${elementId}_${$index}" value.bind="getValue(option)">
+			${getText(option)}
+		</option>
+	</select>
+</template>

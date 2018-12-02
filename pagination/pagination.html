@@ -1,0 +1,22 @@
+<template>
+	<require from="rapiduiFramework/pagination/pagination.css"></require>
+	<nav>
+	  <ul class="pagination">
+	  	<li  if.bind="showPositionalLinks" id="pageFirst" class.bind="currentPage==1 ? 'page-item disabled' : 'page-item'" click.delegate="first()">
+	  		<a class="page-link" href="#" tabindex="-1"><i class="fa fa-angle-double-left"></i></a>
+	  	</li>
+	    <li if.bind="showPositionalLinks" id="pagePrevious" class.bind="currentPage==1 ? 'page-item disabled' : 'page-item'" click.delegate="previous()">
+	      <a class="page-link" href="#" tabindex="-1"><i class="fa fa-angle-left"></i></a>
+	    </li>
+	    <li if.bind="showPageNumbers" repeat.for="page of totalPages" class.bind="currentPage==page+1 ? 'page-item active' : 'page-item'">
+	    	<a class="page-link" href="#" click.delegate="triggerPageChange(page)">${page+1}</a>
+	    </li> <!-- need to disable the click too, not just the style -->
+	    <li if.bind="showPositionalLinks" id="pageNext" class.bind="currentPage==totalPages ? 'page-item disabled' : 'page-item'" click.delegate="forward()">
+	      <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
+	    </li>
+	    <li if.bind="showPositionalLinks" id="pageLast" class.bind="currentPage==totalPages ? 'page-item disabled' : 'page-item'" click.delegate="last()">
+	      <a class="page-link" href="#"><i class="fa fa-angle-double-right"></i></a>
+	    </li>
+	  </ul>
+	</nav>
+</template>

@@ -7,10 +7,12 @@ import 'bootstrap-toggle';
 export class ToggleCustomElement{
 	@bindable({defaultBindingMode: bindingMode.twoWay}) isChecked; //on or off
 	@bindable elementId;
-	@bindable state; //enable or disable
+	@bindable({defaultBindingMode: bindingMode.oneWay}) state; //enable or disable
 	@bindable initialState; //enable or disable (clickable)
 	@bindable onLabel;
 	@bindable offLabel;
+	@bindable onStyle;
+	@bindable offStyle;
 	
 	constructor(element,bindingEngine){
 		this.element = element;
@@ -19,12 +21,8 @@ export class ToggleCustomElement{
 		/*Observer state property change to toggle switch*/
 		this.stateSubscription = this._bindingEngine.propertyObserver(this,'state').subscribe((newValue,oldValue)=>{
 			if(this.elementId){
-				let state = 'enable';
-				if(newValue == false){
-					state = 'disable';
-				}
 				let $ele = $(`#${this.elementId}`);
-				$ele.bootstrapToggle(state);
+				$ele.bootstrapToggle(newValue);
 			}
 		});
 	}
@@ -33,28 +31,28 @@ export class ToggleCustomElement{
 		/*raise change event on toggle switch*/
 		$(()=>{
 			let $ele = $(`#${this.elementId}`);
-			
-			
-			
+
 			$ele.bootstrapToggle({
 				on: this.onLabel ? this.onLabel : 'Enabled',
-				off: this.offLabel ? this.offLabel : 'Disabled'
+				off: this.offLabel ? this.offLabel : 'Disabled',
+				onstyle:this.onStyle ? this.onStyle: 'primary',
+				offstyle:this.offStyle ? this.offStyle: 'default'
 			});
 			
 			//Enables/disables the toggle control on attached
 			if(this.initialState && this.initialState==='disable'){
-				//let $ele = $(`#${this.elementId}`);
 				$ele.bootstrapToggle('disable');
 			}
 			
 			//Flips toggle on/off on attached
 			if(this.isChecked){
+				$ele.unbind('change'); //to allow initial state to be set w/no trigger
 				$ele.bootstrapToggle('on');
 			}
 			
 			$ele.on('change',(event)=>{
 				let changeEvent;
-
+							
                 if (window.CustomEvent) {
                     changeEvent = new CustomEvent('change', {
                         detail: {
@@ -74,8 +72,6 @@ export class ToggleCustomElement{
                 }
                 this.element.dispatchEvent(changeEvent);
 			});
-			
-			
 		});				
 	}
 	
