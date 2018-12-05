@@ -13,12 +13,11 @@ Use this element to provide a client-side paging control for your application as
 * **show-page-numbers** - true/false value to denote if the page numbers should display. In scenarios when you have a lot of pages you may not want to display the numbers due to limited realestate and just show the positional links (first,previous,next,last)
 * **show-positional-links** - true/false value to denote if the first/previous/next/last navigational links should display. 
 
-Note: The objects passed in all-options and selected-options must have both properties identified in the value-property and text-property settings. The selected-options objects must have the property identified in the is-selected-property attribute. 
 
 **Events:**  
-This element uses the Aruelia EventAggregator to publish the 'rapid.page.changed' event. You will want to subscribe to this even in your view model during the attached() or activated() phase of the view model life cycle like the example below (be sure to import the EventAggregator in your view model and set it to a property like _event in the constructor):
+This element uses the Aruelia EventAggregator to publish the 'page.changed' event. You will want to subscribe to this even in your view model during the attached() or activated() phase of the view model life cycle like the example below (be sure to import the EventAggregator in your view model and set it to a property like _event in the constructor):
 
-this._event.subscribe('rapid.page.changed',(page)=>{
+this._event.subscribe('page.changed',(page)=>{
 			this.turnPage(page);
 		});
 	

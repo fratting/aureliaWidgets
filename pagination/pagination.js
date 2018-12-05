@@ -21,8 +21,7 @@ export class Pagination{
 	
 	triggerPageChange(page){
 		this.currentPage = page+1;
-		console.log('change to page ' + this.currentPage);
-		this._event.publish('rapid.page.changed',this.currentPage);
+		this._event.publish('page.changed',this.currentPage);
 	}
 	first(){	
 		if(this.currentPage==1){
